@@ -12,17 +12,19 @@ import (
 
 var (
 	flag string
+	noFlag bool
 	help bool
 )
 
 func init() {
 	pflag.StringVarP(&flag, "flag", "f", "", "flag string. e.g. if '-f=-e', then prints -e AWS_ACCESS_KEY_ID=... -e AWS_SECRET_ACCESS_KEY=...")
+	pflag.BoolVarP(&noFlag, "no-flag", "n", false, "no flags.")
 	pflag.BoolVarP(&help, "help", "h", false, "show this help")
 }
 
 func main() {
 	pflag.Parse()
-	if help {
+	if help || (len(flag) == 0 && !noFlag){
 		pflag.Usage()
 		os.Exit(2)
 	}
