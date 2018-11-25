@@ -1,0 +1,13 @@
+FROM alpine:3.8
+
+RUN apk --no-cache --update add \
+      python \
+      py-pip \
+      groff \
+      less \
+      mailcap \
+      && \
+    pip install --upgrade awscli && \
+    apk -v --purge del py-pip
+
+ENTRYPOINT ["aws"]
