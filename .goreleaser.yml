@@ -1,0 +1,29 @@
+project_name: awskey
+builds:
+- main: ./awskey.go
+  binary: awskey
+  goos:
+  - windows
+  - darwin
+  - linux
+  - freebsd
+  goarch:
+  - 386
+  - amd64
+  - arm
+  - arm64
+  goarm:
+  - 7
+dist: .dist
+archive:
+  format: binary
+  files:
+  - LICENSE*
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "SNAPSHOT-{{ .FullCommit }}"
+changelog:
+  filters:
+    exclude:
+    - '.*'
