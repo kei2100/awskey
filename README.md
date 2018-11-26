@@ -6,6 +6,10 @@ Print AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 that searches environment variables, shared credential file, and EC2 Instance Roles
 
 ### Install
+[release page](https://github.com/kei2100/awskey/releases)
+
+or 
+
 ```
 go get -u github.com/kei2100/awskey
 ```
