@@ -21,4 +21,5 @@ AWS_ACCESS_KEY_ID=... AWS_SECRET_ACCESS_KEY=...
 
 # specify flags
 $ docker run $(awskey --flag=-e) awscli s3 ls
+$ circleci local execute $(awskey --flag=-e) --job=test
 ```
